@@ -1,0 +1,23 @@
+
+
+xe=[1:1:5]
+ye=0.5*xe+5;
+plot(xe,ye)
+display(xe)
+display(ye)
+xs=[11:15]
+ys=[6:10]
+measured_angle_sensor=45
+for i=1:1:5
+    
+    x_emitter=xe(i)
+    y_emitter=ye(i)
+    x_sensor=xs(i)
+    y_sensor=ys(i)
+    X=x_emitter-x_sensor
+    Y=y_emitter-y_sensor
+    angle=Y/X
+    AOA_radians=atan(angle)
+    AOA_degrees=AOA*(180/pi)
+end
+objective_function=measured_angle_sensor-AOA_degrees;
